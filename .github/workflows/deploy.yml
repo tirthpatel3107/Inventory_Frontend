@@ -34,6 +34,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: 
+          script: |
             cd ~/Inventory-Backend
-            ls l
+            ls -l
