@@ -1,0 +1,377 @@
+/***** Custom Table *****/
+.TanstackTable {
+  max-width: calc(100% - 40px) !important;
+  margin-right: -20px !important;
+  position: relative;
+  padding: 0px 20px 5px 20px;
+  min-height: 100%;
+  height: auto;
+
+  .inputFields {
+    background: #ededf1 !important;
+    color: grey !important;
+    margin-right: 10px !important;
+    border-radius: 5px;
+    border: none !important;
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 15px 10px;
+    line-height: 1 !important;
+  }
+  .inputFields:focus-visible {
+    border: none !important;
+    outline: none !important;
+  }
+
+  // Search Field
+  .searchAndAdd {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .globalSearch {
+      width: 65%;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 576px) {
+      .globalSearch {
+        width: 20%;
+      }
+    }
+    // Add employee Button
+    .addEmployee,
+    .hardware,
+    .software {
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+  }
+
+  // Filter Bar
+  .filterBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .leftside {
+      // width: calc(100% - 40px);
+      width: calc(100%);
+      display: flex;
+      overflow: auto;
+    }
+    .rightside {
+      width: 30px;
+
+      img {
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+    .rightside.disabled img {
+      display: none;
+    }
+  }
+
+  // Custom Table
+  .main_table {
+    max-width: 100% !important;
+    overflow: auto !important;
+    display: inline-table;
+
+    thead tr {
+      th {
+        padding: 15px 0;
+        font-size: 14.5px;
+        background: #ededf1;
+        font-style: italic;
+      }
+      th:nth-child(1) {
+        min-width: 145px;
+      }
+      th:nth-child(2) {
+        min-width: 170px;
+      }
+      th:nth-child(3),
+      th:nth-child(4),
+      th:nth-child(5),
+      th:nth-child(6),
+      th:nth-child(7),
+      th:nth-child(8),
+      th:nth-child(9) {
+        min-width: 120px;
+      }
+
+      th:nth-child(6),
+      th:nth-child(7) {
+        max-width: 120px;
+      }
+    }
+
+    tbody tr {
+      .customtableTd {
+        padding: 15px;
+        text-align: center;
+        border-top: 0.729091px solid #edeff5;
+      }
+      td:nth-child(1) {
+        min-width: 145px;
+      }
+      td:nth-child(1) {
+        min-width: 125px;
+      }
+      td:nth-child(3),
+      td:nth-child(4),
+      td:nth-child(5),
+      td:nth-child(6),
+      td:nth-child(7),
+      td:nth-child(8) {
+        min-width: 120px;
+      }
+      td:nth-child(6),
+      td:nth-child(7) {
+        max-width: 150px;
+      }
+      .actionsTd {
+        display: flex;
+        justify-content: center;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+        #viewBtn {
+          background-color: #28a745;
+          margin-right: 5px;
+        }
+        #editBtn {
+          background-color: #ffc11e;
+          margin: 0 5px;
+        }
+        #deleteBtn {
+          background-color: #da1f27;
+          margin-left: 5px;
+        }
+        #unAssignBtn {
+          background-color: #ee4254;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    tbody tr:nth-child(1) {
+      .customtableTd {
+        border-top: none !important;
+      }
+    }
+    tbody tr:last-child {
+      .customtableTd {
+        border-bottom: 0.729091px solid #edeff5;
+      }
+    }
+  }
+
+  // No Data Available
+  .no_data_available {
+    text-align: center;
+  }
+
+  // Pagination
+  .paginationWrapper {
+    margin: 20px 0;
+
+    .Main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 10px 0;
+
+      .arrowsParent {
+        .paginationArrow {
+          background-color: #ededf1;
+          padding: 10px;
+          margin-right: 5px;
+          width: 45px;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          border: none;
+        }
+        .paginationArrow[disabled]:hover {
+          background: #ededf1;
+          color: #b2b2b2;
+          cursor: not-allowed !important;
+        }
+
+        .paginationArrow:hover {
+          background: #c7c3c3;
+          color: #fff;
+        }
+      }
+      .pageOfpage div .page1of1 {
+        padding-left: 7px;
+      }
+      .gotoPagee {
+        cursor: default !important;
+
+        .goToPage {
+          width: 70px;
+          background: #ededf1;
+          margin-left: 8px;
+          height: 22px;
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+        }
+        .goToPage:focus-visible {
+          outline: none !important;
+        }
+      }
+      .showPerPage {
+        background: #ededf1;
+        height: 44px;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+      }
+      .showPerPage:focus-visible {
+        outline: none !important;
+      }
+      @media (max-width: 767px) {
+        .arrowsParent,
+        .gotoPagee {
+          width: calc(100% - 110px);
+        }
+      }
+    }
+  }
+}
+
+.customTable2 {
+  padding: 16px !important;
+  min-height: auto !important;
+}
+#datesubmittedtable {
+  display: none !important;
+}
+
+@media (max-width: 1200px) {
+  .hardwareTable .TanstackTable > table,
+  .softwareTable .TanstackTable > table {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  .employeeTable .TanstackTable > table {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .arrowsParent,
+  .pageOfpage {
+    margin-bottom: 15px;
+  }
+}
+
+.customTableHeading {
+  padding: 15px 20px;
+  background: #ededf1;
+  text-align: left;
+  color: #353945;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: flex;
+}
+
+.customTableHeading span {
+  cursor: default !important;
+}
+
+.cursorDefault {
+  cursor: default;
+}
+
+/******* Filter Design **********/
+.filterRow input {
+  margin-right: 10px;
+  // padding: 10px;
+}
+
+.test1 input {
+  max-width: 126px;
+  margin-right: 5px;
+}
+
+.main_table {
+  width: 100%;
+  overflow: auto;
+}
+
+// Material UI Table
+#viewBtn,
+#deleteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#viewBtn {
+  background-color: #aed75b;
+  margin-right: 5px;
+}
+#deleteBtn {
+  background-color: #da1f27;
+  margin-left: 5px;
+}
+.muiTableTh {
+  font-size: 1rem !important;
+  text-align: center !important;
+  background-color: #ededf1;
+  font-weight: 600 !important;
+}
+.muiTableTh,
+.muiTableTr {
+  font-size: 1rem !important;
+  text-align: center !important;
+}
+span.gotoPagee {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.arrowsParent {
+  display: flex;
+  justify-content: flex-end;
+}

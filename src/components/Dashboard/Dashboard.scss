@@ -1,0 +1,97 @@
+.Dashboard {
+  width: calc(100% - 40px);
+  height: auto;
+  margin: 0 auto;
+
+  .EmployeeWrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .LeftPart {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @media (min-width: 992px) {
+      .LeftPart {
+        width: calc(40% - 10px);
+        padding-right: 10px;
+      }
+    }
+
+    .RightPart {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @media (min-width: 992px) {
+      .RightPart {
+        width: calc(60% - 10px);
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .HardwareWrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .LeftPart {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .card {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+    }
+    @media (min-width: 992px) {
+      .LeftPart {
+        width: calc(60% - 10px);
+        padding-right: 10px;
+      }
+    }
+
+    .RightPart {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @media (min-width: 992px) {
+      .RightPart {
+        width: calc(40% - 10px);
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .uniqueCard,
+  .uniqueCard2 {
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    div {
+      padding: 20px;
+    }
+  }
+  @media (min-width: 992px) {
+    .uniqueCard {
+      width: calc(50% - 10px);
+    }
+  }
+
+  .chart canvas {
+    width: 350px !important;
+    height: 350px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: auto;
+  }
+}

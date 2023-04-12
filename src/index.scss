@@ -1,0 +1,372 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@import "../src/assests/Scss/customClass.scss";
+
+/******** Main Div *********/
+.mainDiv {
+  background-color: #ededf1;
+  min-height: calc(100vh - 20px);
+  height: auto;
+  padding-bottom: 20px;
+}
+
+/******** Header *********/
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 15px 20px;
+  color: #fff;
+  font-weight: 600;
+  background-color: #fff;
+  z-index: 2;
+
+  .imageDiv {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+
+    .mtLogo {
+      width: 110px;
+      cursor: pointer;
+    }
+    .userLogo {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    @media (min-width: 992px) {
+      .mtLogo {
+        width: 130px;
+      }
+    }
+    .headerLink {
+      margin: 0 0 0 20px;
+      color: #000;
+      cursor: pointer;
+    }
+    .headerLink:hover,
+    .headerLink.active {
+      color: #da1f27;
+    }
+  }
+}
+.spacing {
+  padding-top: 92px;
+}
+.containerWrapper {
+  // background-color: pink;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: calc(100% - 40px);
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+
+/******** Navbar *********/
+.navbar {
+  width: calc(100% - 40px);
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .QuickAccessButtons {
+    button {
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 13px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+    .Navbutton {
+      background-color: #da1f27;
+    }
+    .allNav {
+      margin-left: 0px;
+      margin-right: 5px;
+      margin-top: 10px;
+    }
+    @media (min-width: 576px) {
+      .allNav {
+        margin-left: 5px;
+        margin-right: 0px;
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.bg-dark {
+  background: #da1f27 !important;
+  font-weight: 700 !important;
+}
+
+/******** Custom Scrollbar *********/
+@media (min-width: 576px) {
+  body {
+    overflow: overlay !important;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    cursor: pointer !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(200, 200, 200, 0.4);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(200, 200, 200, 0.4);
+    cursor: pointer;
+  }
+}
+
+/******** For Remove Up Down Arrow from Input Field *********/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/******** Dialog *********/
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper,
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.css-uhb5lp {
+  min-width: calc(75%) !important;
+  min-height: 350px;
+}
+.dialogHeading {
+  padding: 0 16px;
+  font-weight: 600 !important;
+}
+#SubmitButton {
+  padding: 15px 20px;
+  background-color: #1a1a1a;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+#SubmitButtonDisable {
+  padding: 15px 20px;
+  background-color: #ededf1;
+  color: grey;
+  font-weight: 600;
+  pointer-events: none;
+  font-size: 12.5px;
+}
+#SubmitButton:disabled {
+  padding: 15px 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+#AddButton {
+  background-color: #1a1a1a;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+.color-error {
+  color: red;
+}
+// ------------- Common for all Dialog ------------------
+.personalDetailsGrid,
+.hardwareDetailsGrid,
+.softwareDetailsGrid {
+  flex-wrap: wrap;
+
+  div {
+    width: 100%;
+
+    div {
+      width: 100%;
+    }
+  }
+  @media (min-width: 576px) {
+    div {
+      width: calc(50% - 8px);
+    }
+  }
+  #date div div {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 13px;
+
+    input {
+      width: 95%;
+    }
+    div {
+      width: 5%;
+    }
+  }
+}
+.error {
+  color: red;
+  font-size: 16px;
+  margin-top: -10px !important;
+}
+.ReadOnlyBoxes {
+  flex-wrap: wrap;
+
+  .textField {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  @media (min-width: 576px) and (max-width: 991px) {
+    .textField {
+      width: calc(50% - 8px);
+    }
+    .textField:nth-child(2n - 1) {
+      margin-right: 16px;
+    }
+  }
+  @media (min-width: 992px) {
+    .textField {
+      width: calc(33.33% - 10.66px);
+    }
+    .textField:nth-child(3n - 1),
+    .textField:nth-child(3n - 2) {
+      margin-right: 16px;
+    }
+  }
+  .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-disabled,
+  .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label.Mui-disabled {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Form Field Error
+.css-1wc848c-MuiFormHelperText-root.Mui-error {
+  font-size: 14px;
+  margin-left: 0px;
+}
+
+.uniqueDate div {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 13px;
+
+  input {
+    width: 95%;
+  }
+  div {
+    width: 5%;
+  }
+}
+.assignDropdown {
+  min-width: 200px !important;
+}
+
+.das .e-toast-container .e-toast {
+  background-color: navy;
+}
+
+.cancelButton {
+  background-color: #da1f27;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  min-width: 120px;
+  padding: 13px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.confirmButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  min-width: 120px;
+  padding: 13px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.textuppercase > div > input,
+.textuppercase > div > textarea {
+  text-transform: uppercase;
+}
+.textcapitalize > div > input,
+.textcapitalize > div > textarea {
+  display: block !important;
+}
+.textcapitalize > div > input::first-letter,
+.textcapitalize > div > textarea::first-letter {
+  text-transform: capitalize !important;
+}
+
+.muiTextField label,
+.muiTextField div input,
+.muiSelectField label,
+ul li {
+  font-size: 14px !important;
+}
+.css-llrb4p-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root,
+.css-1ff8729-MuiInputBase-root-MuiFilledInput-root,
+.css-85zwa9-MuiInputBase-root-MuiFilledInput-root,
+.MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-adornedEnd.css-zs07ro-MuiInputBase-root-MuiFilledInput-root {
+  background-color: #ededf1 !important;
+  font-size: 14px !important;
+}
+
+.DownloadCsv {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #000;
+  border-radius: 5px;
+  text-transform: uppercase;
+  position: absolute;
+  right: 93px;
+  top: -56px;
+  z-index: 1;
+  width: 37px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  max-width: none !important;
+}
