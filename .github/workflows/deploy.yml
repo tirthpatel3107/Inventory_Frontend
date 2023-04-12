@@ -41,10 +41,10 @@ jobs:
             curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 
             .~/.nvm/nvm.sh
 
-            nvm install 19
-            npm install -g pm2
-            cd ~/inventory_frontend
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart api
+      - run: nvm install 19
+      - run: npm install -g pm2
+      - run: cd ~/inventory_frontend
+      - run: git pull origin main
+      - run: npm install
+      - run: npm run build
+      - run: pm2 restart api
