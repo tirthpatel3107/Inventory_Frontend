@@ -36,7 +36,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: 
             npm install -g pm2
-            cd ~/inventory_frontend
+            cd ~/Inventory_Frontend
             git pull origin main
             npm install
             npm run build
