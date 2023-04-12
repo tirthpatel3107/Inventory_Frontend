@@ -35,5 +35,8 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd ~/Inventory-Backend
-            ls -l
+            cd ~/Inventory_Frontend
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart api
